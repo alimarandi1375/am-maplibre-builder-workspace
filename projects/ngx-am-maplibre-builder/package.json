@@ -1,0 +1,32 @@
+{
+  "name": "ngx-am-maplibre-builder",
+  "version": "0.1.0",
+  "description": "A flexible Angular library for building MapLibre GL maps with a simple builder pattern API",
+  "keywords": [
+    "angular",
+    "map",
+    "maplibre",
+    "ngx",
+    "mini-map",
+    "am"
+  ],
+  "author": "Ali Marandi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alimarandi1375/ngx-am-maplibre-builder"
+  },
+  "homepage": "https://github.com/alimarandi1375/ngx-am-maplibre-builder#",
+  "bugs": {
+    "url": "https://github.com/alimarandi1375/ngx-am-maplibre-builder/issues"
+  },
+  "peerDependencies": {
+    "@angular/common": "^17.3.0",
+    "@angular/core": "^17.3.0",
+    "maplibre-gl": "^5.13.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

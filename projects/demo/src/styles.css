@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0!important;
+}
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  width: 100%;
+}
+
+.library-container{
+  width: 720px;
+  height: 720px;
+  display: block;
+}
+
+.page-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: oklch(93.2% 0.032 255.585);
+}

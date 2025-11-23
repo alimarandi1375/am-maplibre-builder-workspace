@@ -2,6 +2,14 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "am-ngx-am-maplibre-builder": [
+        "./dist/am-ngx-am-maplibre-builder"
+      ],
+      "ngx-am-maplibre-builder": [
+        "./dist/ngx-am-maplibre-builder"
+      ]
+    },
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
