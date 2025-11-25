@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   private readonly apiBuilder = new AmMaplibreBuilderApiBuilder();
 
   data = signal<AmMaplibreBuilderApi | null>(null);
+  isShow: boolean = false;
 
   ngOnInit(): void {
     this.apiBuilder
@@ -140,4 +141,7 @@ export class AppComponent implements OnInit {
     this.data.set(this.apiBuilder.build());
   }
 
+  onShow() {
+    this.isShow = !this.isShow
+  }
 }

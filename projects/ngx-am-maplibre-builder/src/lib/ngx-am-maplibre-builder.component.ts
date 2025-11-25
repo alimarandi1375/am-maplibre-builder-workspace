@@ -22,7 +22,6 @@ export class AmMaplibreBuilderComponent implements OnDestroy, OnChanges {
   private static readonly MAP_CONTAINER_ID = 'maplibregl-element';
 
   private mapInitializer: MapInitializer | null = null;
-  private inputDataSubscription!: Subscription;
 
   @Input() config!: AmMaplibreBuilderApi|null;
 
@@ -71,6 +70,5 @@ export class AmMaplibreBuilderComponent implements OnDestroy, OnChanges {
 
   ngOnDestroy(): void {
     this.cleanup();
-    this.inputDataSubscription.unsubscribe();
   }
 }

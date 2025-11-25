@@ -1,8 +1,11 @@
 
+<div (click)="onShow()">show</div>
 
-<div class="page-container">
-  @if (data() !== null) {
-    <ngx-am-maplibre-builder [config]="data()!!" class="library-container"></ngx-am-maplibre-builder>
-  }
-</div>
+@if (isShow) {
+  <div class="page-container">
+    @if (data() !== null) {
+      <ngx-am-maplibre-builder [config]="data()!!" class="library-container"></ngx-am-maplibre-builder>
+    }
+  </div>
+}
 
