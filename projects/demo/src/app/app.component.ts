@@ -141,7 +141,4 @@ export class AppComponent implements OnInit {
     this.data.set(this.apiBuilder.build());
   }
 
-  onShow() {
-    this.isShow = !this.isShow
-  }
 }
