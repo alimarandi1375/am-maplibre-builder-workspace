@@ -5,13 +5,12 @@ import {DEFAULTS} from "../../../ngx-am-maplibre-builder/src/shared/constants/co
 import {AmMaplibreBuilderComponent} from "../../../ngx-am-maplibre-builder/src/lib/ngx-am-maplibre-builder.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  templateUrl: './app.component.html',
-  imports: [
-    AmMaplibreBuilderComponent
-  ],
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    imports: [
+        AmMaplibreBuilderComponent
+    ],
+    styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
   title = 'demo';
