@@ -1,6 +1,6 @@
 {
   "name": "ngx-am-maplibre-builder",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A flexible Angular library for building MapLibre GL maps with a simple builder pattern API",
   "keywords": [
     "angular",
@@ -21,8 +21,8 @@
     "url": "https://github.com/alimarandi1375/ngx-am-maplibre-builder/issues"
   },
   "peerDependencies": {
-    "@angular/common": "^17.3.0",
-    "@angular/core": "^17.3.0",
+    "@angular/common": "^19.2.17",
+    "@angular/core": "^19.2.17",
     "maplibre-gl": "^5.13.0"
   },
   "dependencies": {

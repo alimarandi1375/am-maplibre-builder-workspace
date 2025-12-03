@@ -7,6 +7,7 @@ import {AmMaplibreBuilderComponent} from "../../../ngx-am-maplibre-builder/src/l
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
+    standalone: true,
     imports: [
         AmMaplibreBuilderComponent
     ],

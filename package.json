@@ -4,9 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "build": "ng build ngx-am-maplibre-builder",
+    "watch": "ng build ngx-am-maplibre-builder --watch --configuration development",
+    "test": "ng test",
+    "pack": "npm pack",
+    "prepublishOnly": "npm run build"
   },
   "private": true,
   "dependencies": {
