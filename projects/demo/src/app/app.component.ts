@@ -19,12 +19,22 @@ export class AppComponent implements OnInit {
   private readonly apiBuilder = new AmMaplibreBuilderApiBuilder();
 
   data = signal<AmMaplibreBuilderApi | null>(null);
-  isShow: boolean = false;
 
   ngOnInit(): void {
+
+    const tehranImagePath =  'https://cdn-icons-png.flaticon.com/512/16183/16183889.png'
+    const mashhadImagePath =  '   https://cdn-icons-png.flaticon.com/512/16268/16268543.png '
+    const tehranImage = new Image(48, 48);
+    const mashhadImage = new Image(48, 48);
+    tehranImage.crossOrigin = 'anonymous';
+    tehranImage.src = tehranImagePath;
+    mashhadImage.crossOrigin = 'anonymous';
+    mashhadImage.src = mashhadImagePath;
+
     this.apiBuilder
       .setOptions(DEFAULTS.options)
       .setStyles(DEFAULTS.styles)
+
       .setControls([
         {
           control: new maplibregl.ScaleControl({unit: 'metric'}),
@@ -108,35 +118,16 @@ export class AppComponent implements OnInit {
         {
           layer: {
             id: 'points-layer',
-            type: 'circle',
-            source: 'points-source',
-            paint: {
-              'circle-radius': 8,
-              'circle-color': '#007cbf',
-              'circle-stroke-width': 2,
-              'circle-stroke-color': '#ffffff'
-            }
-          }
-        },
-        {
-          layer: {
-            id: 'points-label',
             type: 'symbol',
             source: 'points-source',
             layout: {
-              'text-field': ['get', 'title'],
-              'text-size': 12,
-              'text-offset': [0, 1.5],
-              'text-anchor': 'top'
-            },
-            paint: {
-              'text-color': '#000000',
-              'text-halo-color': '#ffffff',
-              'text-halo-width': 2
+              'icon-image': 'tehran',
+              'icon-allow-overlap': true,
             }
           }
-        }
-      ]);
+        },
+      ])
+      .setImages([{id: 'tehran', src:tehranImage},{id: 'mashhad', src:mashhadImage}])
 
     this.data.set(this.apiBuilder.build());
   }

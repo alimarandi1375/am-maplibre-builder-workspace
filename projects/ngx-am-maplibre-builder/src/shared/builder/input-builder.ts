@@ -6,6 +6,7 @@ import {
   MapOptions,
   MapSource
 } from "../../data/models/map-data.model";
+import {MapImage} from "../../data/types/types";
 
 /**
  * Main API interface for ngx-mini-map library
@@ -17,6 +18,7 @@ export interface AmMaplibreBuilderApi {
   eventHandlers?: MapEventHandler[];
   sources?: MapSource[];
   layers?: MapLayer[];
+  images?: MapImage[];
 }
 
 /**
@@ -29,6 +31,7 @@ export class AmMaplibreBuilderApiBuilder {
   private eventHandlers?: MapEventHandler[];
   private sources?: MapSource[];
   private layers?: MapLayer[];
+  private images?: MapImage[];
 
   constructor() {}
 
@@ -42,7 +45,8 @@ export class AmMaplibreBuilderApiBuilder {
       controls: this.controls,
       eventHandlers: this.eventHandlers,
       sources: this.sources,
-      layers: this.layers
+      layers: this.layers,
+      images: this.images,
     };
   }
 
@@ -91,6 +95,14 @@ export class AmMaplibreBuilderApiBuilder {
    */
   setLayers(layers: MapLayer[]): this {
     this.layers = layers;
+    return this;
+  }
+
+  /**
+   * Sets the map layers
+   */
+  setImages(images: MapImage[]): this {
+    this.images = images;
     return this;
   }
 }

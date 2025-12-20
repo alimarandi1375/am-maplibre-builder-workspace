@@ -55,6 +55,7 @@ export class AmMaplibreBuilderComponent implements OnDestroy, OnChanges {
       eventHandlers: config.eventHandlers,
       sources: config.sources,
       layers: config.layers,
+      images: config.images,
     });
 
     this.mapInitializer.initialize();

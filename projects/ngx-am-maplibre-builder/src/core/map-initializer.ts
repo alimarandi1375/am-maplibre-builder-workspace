@@ -11,6 +11,8 @@ import {MapControlManager} from './map-control-manager';
 import {MapEventManager} from './map-event-manager';
 import {MapSourceManager} from './map-source-manager';
 import {MapLayerManager} from './map-layer-manager';
+import {MapImageManager} from "./map-image-manager";
+import {MapImage} from "../data/types/types";
 
 /**
  * Configuration interface for map initialization
@@ -23,6 +25,7 @@ export interface MapInitializerConfig {
   eventHandlers?: MapEventHandler[];
   sources?: MapSource[];
   layers?: MapLayer[];
+  images?: MapImage[];
 }
 
 /**
@@ -35,6 +38,7 @@ export class MapInitializer {
   private eventManager: MapEventManager | null = null;
   private sourceManager: MapSourceManager | null = null;
   private layerManager: MapLayerManager | null = null;
+  private imageManager: MapImageManager | null = null;
   private readonly config: MapInitializerConfig;
 
   constructor(config: MapInitializerConfig) {
@@ -49,7 +53,7 @@ export class MapInitializer {
     this.createMap();
     this.setupManagers();
     this.applyStyle();
-    this.setupSourcesAndLayers();
+    this.setupMapConfigs();
 
     return this.map!;
   }
@@ -117,6 +121,12 @@ export class MapInitializer {
       this.map,
       this.config.layers
     );
+
+    this.imageManager = new MapImageManager(
+      this.map,
+      this.config.images
+    )
+
   }
 
   /**
@@ -134,7 +144,7 @@ export class MapInitializer {
    * Sets up sources and layers after style is loaded
    * Sources must be added before layers that reference them
    */
-  private setupSourcesAndLayers(): void {
+  private setupMapConfigs(): void {
     if (!this.map) {
       throw new Error('Map must be created before setting up sources and layers');
     }
@@ -143,6 +153,7 @@ export class MapInitializer {
     this.map.once('style.load', () => {
       this.sourceManager?.addSources();
       this.layerManager?.addLayers();
+      this.imageManager?.addImage();
     });
   }
 }
